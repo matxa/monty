@@ -14,13 +14,13 @@ char *open_read_file(char *file_name)
 	fd = open(file_name, O_RDONLY | S_IRUSR | S_IWUSR);
 	if (fd == -1)
 	{
-		perror("file Descriptor failed");
-		exit(-1);
+		fprintf(stderr, "Error: Can't open file %s\n", file_name);
+		exit(EXIT_FAILURE);
 	}
 	if (fstat(fd, &file_size) == -1)
 	{
 		perror("couldn't get file size");
-		exit(-1);
+		exit(EXIT_FAILURE);
 	}
 
 	file_content = mmap(NULL, file_size.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
