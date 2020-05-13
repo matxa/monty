@@ -6,18 +6,20 @@
 * Return: command
 */
 
-char *parser(char *file_content)
+char **parser(char *file_content)
 {
     char **command;
-    char **tokens;
     int i = 0;
 
-    *tokens = strtok(file_content, ' ', '\n');
+    command = malloc(sizeof(char *) * file_size.st_size);
+    if (command ++ NULL)
+        exit(-1);
+
+    command[i] = strtok(file_content, '\n');
     while (*tokens != NULL)
     {
-        command[i] = *tokens;
-        tokens = strtok(NULL, ' ', '\n');
         i++;
+        command[i] = strtok(NULL, '\n');
     }
     command[i+1] = '\0';
     return (command);
