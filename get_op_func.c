@@ -6,7 +6,7 @@
  * Return: command
  */
 
-int *parser(char *file_content)
+int parser(char *file_content)
 {
 	int i = 0;
     char *token = strtok(file_content, " \n");
@@ -14,7 +14,7 @@ int *parser(char *file_content)
 	{
 		i++;
 		token = strtok(NULL, " \n");
-        printf("%d: [] --- %s\n", i, token, token);
+        printf("%d: [%p] --- %s\n", i, token, token);
 	}
     printf("\n");
     printf("The while loop counted %d tokens\n", i);

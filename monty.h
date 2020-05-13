@@ -45,7 +45,7 @@ typedef struct instruction_s
 stack_t *push(stack_t **head, const int n);
 size_t pall(const stack_t *h);
 char *open_read_file(char *file_name);
-int *parser(char *file_content);
+int parser(char *file_content);
 int op_add(int a, int b);
 int op_sub(int a, int b);
 int op_mul(int a, int b);
