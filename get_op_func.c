@@ -8,7 +8,7 @@
 
 char *parser(char *file_content)
 {
-    char *command;
+    char **command;
     char *tokens;
     int i = 0;
 
