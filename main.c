@@ -17,8 +17,8 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		perror("Usage ./monty file_name.m\n");
-		exit(-1);
+		perror("USAGE: monty file\n");
+		exit(EXIT_FAILURE);
 	}
 	file_name = argv[1];
 
