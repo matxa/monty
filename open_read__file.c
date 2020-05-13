@@ -9,6 +9,7 @@
 char *open_read_file(char *file_name)
 {
     int fd;
+    char *file_content;
     struct stat file_size;
 
     fd = open(file_name, O_RDONLY | S_IRUSR | S_IWUSR);
@@ -17,8 +18,13 @@ char *open_read_file(char *file_name)
         perror("file Descriptor failed");
         exit(-1);
     }
+    if (fstat(fd, &file_size) == -1)
+    {
+        perror("couldn't get file size");
+        exit(-1);
+    }
 
-    file_name = mmap(NULL, file_size.st_size, PROT_READ, MAP_PRIVATE, fd, 4064);
+    file_content = mmap(NULL, file_size.st_size, PROT_READ, MAP_PRIVATE, fd, 4064);
     if (file_name == MAP_FAILED)
     {
         perror("Could not fill up the buffer");
@@ -27,5 +33,5 @@ char *open_read_file(char *file_name)
     }
 
     close(fd);
-    return file_name;
+    return file_content;
 }
