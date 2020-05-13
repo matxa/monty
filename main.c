@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 	char *file_content;
     char **tokens;
 	unsigned int i;
-	unsigned int b;
     long int n;
 
 	if (argc != 2)
@@ -31,7 +30,6 @@ int main(int argc, char **argv)
     n = file_size.st_size;
 	printf("file size is - %ld\n", n);
 	printf("\n");
-    b = 0;
     printf("%ld\n", n);
 
     tokens = malloc(sizeof(char *) * 4024);
