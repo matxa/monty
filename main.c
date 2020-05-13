@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 	char *file_content;
+    char *file_content_copy;
     unsigned int i;
     char **hold_tokens;
 	int c = 0;
@@ -27,6 +28,7 @@ int main(int argc, char **argv)
     {
         printf("%c", file_content[i]);
     }
+    file_content[i+1] = "\0";
 
     hold_tokens = malloc(sizeof(char *) * 1024);
 	if (hold_tokens == NULL)
