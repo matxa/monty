@@ -1,28 +1,28 @@
 #include "monty.h"
 
 /**
-* parser - perses the file file_content
-* @file_name: file
-* Return: command
-*/
+ * parser - perses the file file_content
+ * @file_name: file
+ * Return: command
+ */
 
 char **parser(char *file_content, int n)
 {
-    char **command;
-    int i = 0;
+	char **command;
+	int i = 0;
 
-    n = file_size.st_size;
-    command = malloc(sizeof(char *) * n);
-    if (command == NULL)
-        exit(-1);
+	n = file_size.st_size;
+	command = malloc(sizeof(char *) * n);
+	if (command == NULL)
+		exit(-1);
 
-    command[i] = strtok(file_content, " \n");
-    while (command[i] != NULL)
-    {
-        i++;
-        command[i] = strtok(NULL, " \n");
-    }
-    return (command);
+	command[i] = strtok(file_content, " \n");
+	while (command[i] != NULL)
+	{
+		i++;
+		command[i] = strtok(NULL, " \n");
+	}
+	return (command);
 }
 
 /**
@@ -32,19 +32,19 @@ char **parser(char *file_content, int n)
  */
 
 /**
-*int (*get_op_func(char *s))(int, int)
-*{
-*    int i;
-*
-*	instruction_t ops[] = {};
-*
-*	i = 0;
-*	while (ops[i].opcode != NULL)
-*	{
-*		if (*ops[i].opcode == *s && !(*(s + 1)))
-*			return (ops[i].f);
-*		i++;
-*	}
-*	return (NULL);
-*}
-*/
+ *int (*get_op_func(char *s))(int, int)
+ *{
+ *    int i;
+ *
+ *	instruction_t ops[] = {};
+ *
+ *	i = 0;
+ *	while (ops[i].opcode != NULL)
+ *	{
+ *		if (*ops[i].opcode == *s && !(*(s + 1)))
+ *			return (ops[i].f);
+ *		i++;
+ *	}
+ *	return (NULL);
+ *}
+ */
