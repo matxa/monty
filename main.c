@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	printf("\n");
 
     i = 0;
-    tokens = char **parser(file_content, file_size.st_size);
+    tokens = parser(char *file_content, st_size n);
     while (tokens[i] != NULL)
     {
         printf("%s\n", tokens[i]);
