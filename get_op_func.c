@@ -35,11 +35,7 @@ int (*get_op_func(char *s))(int, int)
 {
     int i;
 
-	instruction_t ops[] = {
-        {"push", push},
-        {"pall", pall},
-		{NULL, NULL}
-	};
+	instruction_t ops[] = {};
 
 	i = 0;
 	while (ops[i].opcode != NULL)

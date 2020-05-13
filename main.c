@@ -12,6 +12,7 @@ int main(int argc, char **argv)
 	char *arg_num = "Usage ./monty file_name.m";
 	char *file_name;
 	char *file_content;
+    char **tokens;
 	unsigned int i;
 
 	if (argc != 2)
@@ -28,5 +29,13 @@ int main(int argc, char **argv)
 	}
 	printf("file size is - %ld\n", file_size.st_size);
 	printf("\n");
+
+    i = 0;
+    tokens = parser(file_content);
+    while (tokens[i] != NULL)
+    {
+        printf("%s\n", tokens[i]);
+        i++;
+    }
 	return (1);
 }
