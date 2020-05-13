@@ -9,7 +9,6 @@
 
 int main(int argc, char **argv)
 {
-	char *arg_num = "Usage ./monty file_name.m";
 	char *file_name;
 	char *file_content;
     char **tokens;
@@ -18,7 +17,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		perror("%s\n", arg_num);
+		perror("Usage ./monty file_name.m\n");
 		exit(-1);
 	}
 	file_name = argv[1];
