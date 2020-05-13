@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	char *file_content;
     char **tokens;
 	unsigned int i;
-    int n;
+    long int n;
 
 	if (argc != 2)
 	{
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
     n = file_size.st_size;
     i = 0;
-    printf("%d", n);
+    printf("%ld", n);
     tokens = malloc(sizeof(char *) * n);
     tokens = parser(file_content, n);
     while (tokens[i] != NULL)
