@@ -8,7 +8,7 @@
 
 char *parser(char *file_content)
 {
-    char **command;
+    char *command;
     char *tokens;
     int i = 0;
 
@@ -16,7 +16,7 @@ char *parser(char *file_content)
     while (tokens != NULL)
     {
         command[i] = tokens;
-        tokens = strtok(file_content, ' ', '\n');
+        tokens = strtok(NULL, ' ', '\n');
         i++;
     }
     command[i+1] = '\0';
