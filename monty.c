@@ -21,13 +21,12 @@ int main(int argc, char **argv)
     }
     file_name = argv[1];
 
-    printf("file size is - %ld\n", file_size.st_size);
-
     file_content = open_read_file(file_name);
     for (i = 0; i < file_size.st_size; i++)
     {
         printf("%c", file_content[i]);
     }
+    printf("file size is - %ld\n", file_size.st_size);
     printf("\n");
     return (1);
 }
