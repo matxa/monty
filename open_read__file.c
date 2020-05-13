@@ -11,7 +11,7 @@ char *open_read_file(char *file_name)
     int fd;
     struct stat file_size;
 
-    fd = open(file_name, O_RDONLY, 444);
+    fd = open(file_name, O_RDONLY | S_IRUSR | S_IWUSR);
     if (fd == -1)
     {
         perror("file Descriptor failed");
@@ -21,7 +21,7 @@ char *open_read_file(char *file_name)
     file_name = mmap(NULL, file_size.st_size, PROT_READ, MAP_SHARED, fd, 0);
     if (file_name == MAP_FAILED)
     {
-        perror("Could not write to buffer");
+        perror("Could not fill up the buffer");
         close(fd);
         exit(-1);
     }
