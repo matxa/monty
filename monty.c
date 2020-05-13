@@ -12,7 +12,7 @@ int main(int argc, char **argv)
     char *arg_num = "Usage ./monty file_name.m";
     char *file_name;
     char *file_content;
-    int i;
+    unsigned int i;
 
     if (argc != 2)
     {
