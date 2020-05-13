@@ -34,7 +34,7 @@ int main(int argc, char **argv)
     b = 0;
     printf("%ld\n", n);
 
-    tokens = malloc(sizeof(char *) * n);
+    tokens = malloc(sizeof(char *) * 4024);
     tokens = parser(file_content, n);
     while (tokens[b] != NULL)
     {
