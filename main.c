@@ -41,7 +41,7 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
     tokens = parser(file_content, n);
-    printf("%s\n", tokens);
+    printf("%s\n", *tokens);
     while (tokens[b] != NULL)
     {
         printf("%s\n", tokens[b]);
