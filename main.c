@@ -34,12 +34,12 @@ int main(int argc, char **argv)
 	if (hold_tokens == NULL)
 		exit(-1);
 
-	hold_tokens[i] = strtok(file_content_copy, " \n");
+	hold_tokens[i] = strtok(file_content_copy, "\n");
 	while (hold_tokens[i] != NULL)
 	{
         printf("%d -> %s\n", c, hold_tokens[c]);
 		c++;
-		hold_tokens[i] = strtok(NULL, " \n");
+		hold_tokens[i] = strtok(NULL, "\n");
 	}
 	return (1);
 }
