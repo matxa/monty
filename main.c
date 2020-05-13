@@ -11,7 +11,6 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 	char *file_content;
-    char *file_content_copy;
     unsigned int i;
     char **hold_tokens;
 	int c = 0;
