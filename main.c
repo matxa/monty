@@ -12,6 +12,8 @@ int main(int argc, char **argv)
 	char *file_name;
 	char *file_content;
     unsigned int i;
+    char **hold_tokens;
+	int c = 0;
 
 	if (argc != 2)
 	{
@@ -25,5 +27,17 @@ int main(int argc, char **argv)
     {
         printf("%c", file_content[i]);
     }
+
+    hold_tokens = malloc(sizeof(char *) * 1024);
+	if (hold_tokens == NULL)
+		exit(-1);
+
+	hold_tokens[i] = strtok(file_content, " \n");
+	while (hold_tokens[i] != NULL)
+	{
+        printf("%d -> %s\n", c, hold_tokens[c]);
+		c++;
+		hold_tokens[i] = strtok(NULL, " \n");
+	}
 	return (1);
 }
