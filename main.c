@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 	char *file_content;
-    char **tokens;
+    char tokens = [1024];
 	unsigned int i;
 	unsigned int b;
     long int n;
@@ -28,18 +28,17 @@ int main(int argc, char **argv)
 	{
 		printf("%c", file_content[i]);
 	}
-    n = file_size.st_size;
-	printf("file size is - %ld\n", n);
-	printf("\n");
-    b = 0;
-    printf("%ld\n", n);
 
-    tokens = malloc(sizeof(char *) * 4024);
     if (tokens == NULL)
     {
         perror("Error: malloc failed");
         exit(EXIT_FAILURE);
     }
+    n = file_size.st_size;
+	printf("file size is - %ld\n", n);
+	printf("\n");
+    b = 0;
+    printf("%ld\n", n);
     tokens = parser(file_content, n);
     while (tokens[b] != NULL)
     {

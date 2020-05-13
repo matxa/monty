@@ -6,9 +6,9 @@
  * Return: command
  */
 
-char **parser(char *file_content, long int n)
+char *parser(char *file_content, long int n)
 {
-	char **command[n];
+	char command = [n];
 	int i = 0;
 
 	if (command == NULL)
