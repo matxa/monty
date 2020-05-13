@@ -9,6 +9,7 @@
 char *parser(char *file_content)
 {
     char *command;
+    char *tokens;
     int i = 0;
 
     tokens = strtok(file_content, ' ', '\n');
@@ -33,13 +34,8 @@ int (*get_op_func(char *s))(int, int)
     int i;
 
 	instruction_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
         {"push", push},
-        {"pall", pall}
+        {"pall", pall},
 		{NULL, NULL}
 	};
 
