@@ -36,10 +36,10 @@ int main(int argc, char **argv)
 
     tokens = malloc(sizeof(char *) * n);
     tokens = parser(file_content, n);
-    while (tokens[i] != NULL)
+    while (tokens[b] != NULL)
     {
         printf("%s\n", tokens[i]);
-        i++;
+        b++;
     }
 	return (1);
 }
