@@ -22,7 +22,6 @@ char **parser(char *file_content, int n)
         i++;
         command[i] = strtok(NULL, " \n");
     }
-    command[i+1] = NULL;
     return (command);
 }
 
