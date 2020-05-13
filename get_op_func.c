@@ -8,14 +8,14 @@
 
 char *parser(char *file_content)
 {
-    char *command;
-    char *tokens;
+    char **command;
+    char **tokens;
     int i = 0;
 
     tokens = strtok(file_content, ' ', '\n');
     while (tokens != NULL)
     {
-        command[i] = tokens;
+        command[i] = *tokens;
         tokens = strtok(NULL, ' ', '\n');
         i++;
     }
