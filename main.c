@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     tokens = malloc(sizeof(char *) * 4024);
     if (tokens == NULL)
     {
-        Error: malloc failed
+        perror("Error: malloc failed");
         exit(EXIT_FAILURE)
     }
     tokens = parser(file_content, n);

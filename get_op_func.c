@@ -14,7 +14,7 @@ char **parser(char *file_content, long int n)
 	command = malloc(sizeof(char *) * n);
 	if (command == NULL)
     {
-        Error: malloc failed
+        perror("Error: malloc failed");
         exit(EXIT_FAILURE)
     }
 
