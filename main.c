@@ -27,7 +27,6 @@ int main(int argc, char **argv)
     {
         printf("%c", file_content[i]);
     }
-    file_content[i+1] = "\0";
 
     hold_tokens = malloc(sizeof(char *) * 1024);
 	if (hold_tokens == NULL)
