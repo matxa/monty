@@ -18,7 +18,7 @@ char *open_read_file(char *file_name)
         exit(-1);
     }
 
-    file_name = mmap(0, file_size.st_size, PROT_READ, MAP_SHARED, fd, 0);
+    file_name = mmap(NULL, file_size.st_size, PROT_READ, MAP_SHARED, fd, 0);
     if (file_name == MAP_FAILED)
     {
         perror("Could not write to buffer");
