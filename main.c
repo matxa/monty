@@ -25,7 +25,17 @@ int main(int argc, char **argv)
 	{
 		printf("%c", file_content[i]);
 	}
-    parser(file_content);
+    int i = 0;
+
+    char *token = strtok(file_content, " \n");
+	while (token != NULL)
+	{
+		i++;
+		token = strtok(NULL, " \n");
+        printf("%d: [%p] --- %s\n", i, token, token);
+	}
+    printf("\n");
+    printf("The while loop counted %d tokens\n", i);
 
 	return (1);
 }

@@ -6,20 +6,6 @@
  * Return: command
  */
 
-int parser(char *file_content)
-{
-	int i = 0;
-    char *token = strtok(*file_content, " \n");
-	while (token != NULL)
-	{
-		i++;
-		token = strtok(NULL, " \n");
-        printf("%d: [%p] --- %s\n", i, token, token);
-	}
-    printf("\n");
-    printf("The while loop counted %d tokens\n", i);
-	return (1);
-}
 
 /**
  * get_op_func - selects the correct function to perform the operation
