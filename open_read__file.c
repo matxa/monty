@@ -30,6 +30,12 @@ char *open_read_file(char *file_name)
         close(fd);
         exit(-1);
     }
+    
+    for (i = 0; i < file_size.st_size; i++)
+    {
+        printf("%c", file_content[i]);
+    }
+    printf("file size is - %ld\n", file_size.st_size);
 
     close(fd);
     return file_content;
