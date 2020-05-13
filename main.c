@@ -33,6 +33,7 @@ int main(int argc, char **argv)
 
     n = file_size.st_size;
     i = 0;
+    printf("%d", n);
     tokens = malloc(sizeof(char *) * n);
     tokens = parser(file_content, n);
     while (tokens[i] != NULL)
