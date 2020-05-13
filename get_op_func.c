@@ -12,8 +12,8 @@ char *parser(char *file_content)
     char **tokens;
     int i = 0;
 
-    tokens = strtok(file_content, ' ', '\n');
-    while (tokens != NULL)
+    *tokens = strtok(file_content, ' ', '\n');
+    while (*tokens != NULL)
     {
         command[i] = *tokens;
         tokens = strtok(NULL, ' ', '\n');
