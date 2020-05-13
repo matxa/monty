@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
     i = 0;
     tokens = parser(file_content);
-    while (tokens[i] != NULL)
+    while (tokens[i] != "\0")
     {
         printf("%s\n", tokens[i]);
         i++;
