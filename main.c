@@ -29,7 +29,7 @@ int main(int argc, char **argv)
         file_content_copy[i] = file_content[i];
         printf("%c", file_content[i]);
     }
-    printf("%s", file_content_copy);
+    printf("%s\n", file_content_copy);
 
     hold_tokens = malloc(sizeof(char *) * 1024);
 	if (hold_tokens == NULL)
