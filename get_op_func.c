@@ -6,7 +6,7 @@
 * Return: command
 */
 
-char **parser(char **file_content)
+char **parser(char *file_content)
 {
     char **command;
     int i = 0;
