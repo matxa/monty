@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 	char *file_content;
     char **tokens;
 	unsigned int i;
+    int n;
 
 	if (argc != 2)
 	{
@@ -30,8 +31,9 @@ int main(int argc, char **argv)
 	printf("file size is - %ld\n", file_size.st_size);
 	printf("\n");
 
+    n = file_size.st_size;
     i = 0;
-    tokens = parser(char *file_content, st_size n);
+    tokens = parser(char *file_content, n);
     while (tokens[i] != NULL)
     {
         printf("%s\n", tokens[i]);

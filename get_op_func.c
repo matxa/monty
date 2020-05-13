@@ -11,7 +11,8 @@ char **parser(char *file_content, int n)
     char **command;
     int i = 0;
 
-    command = malloc(sizeof(char *) * file_size.st_size);
+    n = file_size.st_size;
+    command = malloc(sizeof(char *) * n);
     if (command == NULL)
         exit(-1);
 
