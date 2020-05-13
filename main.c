@@ -12,6 +12,7 @@ int main(int argc, char **argv)
 	char *file_name;
 	char *file_content;
 	unsigned int i;
+    int b = 0;
 
 	if (argc != 2)
 	{
@@ -25,12 +26,11 @@ int main(int argc, char **argv)
 	{
 		printf("%c", file_content[i]);
 	}
-    int i = 0;
 
     char *token = strtok(file_content, " \n");
 	while (token != NULL)
 	{
-		i++;
+		b++;
 		token = strtok(NULL, " \n");
         printf("%d: [%p] --- %s\n", i, token, token);
 	}
