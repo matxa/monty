@@ -10,6 +10,7 @@ char *open_read_file(char *file_name)
 {
     int fd;
     char *file_content;
+    unsigned int i;
 
     fd = open(file_name, O_RDONLY | S_IRUSR | S_IWUSR);
     if (fd == -1)
@@ -30,7 +31,7 @@ char *open_read_file(char *file_name)
         close(fd);
         exit(-1);
     }
-    
+
     for (i = 0; i < file_size.st_size; i++)
     {
         printf("%c", file_content[i]);
