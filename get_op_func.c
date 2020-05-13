@@ -9,7 +9,7 @@
 int parser(char *file_content)
 {
 	int i = 0;
-    char *token = strtok(file_content, " \n");
+    char *token = strtok(*file_content, " \n");
 	while (token != NULL)
 	{
 		i++;
