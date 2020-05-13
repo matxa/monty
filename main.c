@@ -11,9 +11,6 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 	char *file_content;
-    char *token = malloc(sizeof(char) * 1024);
-	unsigned int i;
-    int b = 0;
 
 	if (argc != 2)
 	{
