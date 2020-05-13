@@ -8,10 +8,9 @@
 
 char **parser(char *file_content, long int n)
 {
-	char **command;
+	char **command[n];
 	int i = 0;
 
-	command = malloc(sizeof(char *) * n);
 	if (command == NULL)
     {
         perror("Error: malloc failed");
