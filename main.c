@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 	char *file_content;
+    char *file_content_copy[1024];
     unsigned int i;
     char **hold_tokens;
 	int c = 0;
@@ -25,6 +26,7 @@ int main(int argc, char **argv)
 	file_content = open_read_file(file_name);
     for (i = 0; i < file_size.st_size; i++)
     {
+        file_content_copy[i] = file_content[i];
         printf("%c", file_content[i]);
     }
 
@@ -32,7 +34,7 @@ int main(int argc, char **argv)
 	if (hold_tokens == NULL)
 		exit(-1);
 
-	hold_tokens[i] = strtok(file_content, " \n");
+	hold_tokens[i] = strtok(file_content_copy, " \n");
 	while (hold_tokens[i] != NULL)
 	{
         printf("%d -> %s\n", c, hold_tokens[c]);
