@@ -12,11 +12,11 @@ char **parser(char *file_content)
     int i = 0;
 
     command = malloc(sizeof(char *) * file_size.st_size);
-    if (command ++ NULL)
+    if (command == NULL)
         exit(-1);
 
     command[i] = strtok(file_content, '\n');
-    while (*tokens != NULL)
+    while (command[i] != NULL)
     {
         i++;
         command[i] = strtok(NULL, '\n');
