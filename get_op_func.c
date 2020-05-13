@@ -15,11 +15,11 @@ char **parser(char *file_content)
     if (command == NULL)
         exit(-1);
 
-    command[i] = strtok(file_content, '\n');
+    command[i] = strtok(file_content, " \n");
     while (command[i] != NULL)
     {
         i++;
-        command[i] = strtok(NULL, '\n');
+        command[i] = strtok(NULL, " \n");
     }
     command[i+1] = '\0';
     return (command);
