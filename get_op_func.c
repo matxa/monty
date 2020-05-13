@@ -6,24 +6,19 @@
  * Return: command
  */
 
-char *parser(char *file_content, long int n)
+int *parser(char *file_content, long int n)
 {
-	char command = [n];
 	int i = 0;
-
-	if (command == NULL)
-    {
-        perror("Error: malloc failed");
-        exit(EXIT_FAILURE);
-    }
-
-	command[i] = strtok(file_content, " \n");
-	while (command[i] != NULL)
+    char token = strtok(file_content, " \n");
+	while (token != NULL)
 	{
 		i++;
-		command[i] = strtok(NULL, " \n");
+		token = strtok(NULL, " \n");
+        print("%d: [] --- %s\n", i, token, token);
 	}
-	return (command);
+    printf("\n");
+    printf("The while loop counted %d tokens\n", i);
+	return (1);
 }
 
 /**

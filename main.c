@@ -28,22 +28,7 @@ int main(int argc, char **argv)
 	{
 		printf("%c", file_content[i]);
 	}
+    parser(file_content, n);
 
-    if (tokens == NULL)
-    {
-        perror("Error: malloc failed");
-        exit(EXIT_FAILURE);
-    }
-    n = file_size.st_size;
-	printf("file size is - %ld\n", n);
-	printf("\n");
-    b = 0;
-    printf("%ld\n", n);
-    tokens = parser(file_content, n);
-    while (tokens[b] != NULL)
-    {
-        printf("%s\n", tokens[b]);
-        b++;
-    }
 	return (1);
 }
