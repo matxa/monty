@@ -3,7 +3,7 @@
 /**
  * push - adds to the top of the stack
  * @head: head of the list
- * @num: integer value
+ * @n: integer value
  * Return: pointer to the node pushed
  */
 
@@ -27,7 +27,7 @@ stack_t *push(stack_t **head, const int n)
 
 /**
  * pall - prints all int in the list
- * @head: head of the list
+ * @h: head of the list
  * Return: printed list
  */
 

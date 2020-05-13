@@ -32,5 +32,5 @@ char *open_read_file(char *file_name)
 	}
 
 	close(fd);
-	return file_content;
+	return (file_content);
 }
