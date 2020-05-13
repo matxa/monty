@@ -26,6 +26,6 @@ int main(int argc, char **argv)
     {
         printf("%c", file_content[i]);
     }
-    printf("\n")
+    printf("\n");
     return (1);
 }
