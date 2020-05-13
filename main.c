@@ -11,10 +11,7 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 	char *file_content;
-    char tokens = [1024];
 	unsigned int i;
-	unsigned int b;
-    long int n;
 
 	if (argc != 2)
 	{
@@ -28,7 +25,7 @@ int main(int argc, char **argv)
 	{
 		printf("%c", file_content[i]);
 	}
-    parser(file_content, n);
+    parser(file_content);
 
 	return (1);
 }
