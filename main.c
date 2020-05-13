@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		printf("%c", file_content[i]);
 	}
     n = file_size.st_size;
-	printf("file size is - %ld\n", file_size.st_size);
+	printf("file size is - %ld\n", n);
 	printf("\n");
     i = 0;
     printf("%ld", n);
