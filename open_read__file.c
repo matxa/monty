@@ -10,7 +10,6 @@ char *open_read_file(char *file_name)
 {
     int fd;
     char *file_content;
-    struct stat file_size;
 
     fd = open(file_name, O_RDONLY | S_IRUSR | S_IWUSR);
     if (fd == -1)
