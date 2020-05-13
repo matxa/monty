@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 	char *file_content;
+    unsigned int i;
 
 	if (argc != 2)
 	{
@@ -19,7 +20,7 @@ int main(int argc, char **argv)
 	}
 	file_name = argv[1];
 
-	file_content = open_read_file(file_name);    
+	file_content = open_read_file(file_name);
     for (i = 0; i < file_size.st_size; i++)
     {
         printf("%c", file_content[i]);
