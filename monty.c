@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     file_name = argv[1];
 
     file_content = open_read_file(file_name);
-    for (i = 0; i < file_size.st_size; i++)
+    for (i = 0; i < strlen(file_content); i++)
     {
         printf("%c", file_content[i]);
     }
