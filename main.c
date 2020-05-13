@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 	char *file_content;
+    char *token;
 	unsigned int i;
     int b = 0;
 
@@ -27,7 +28,7 @@ int main(int argc, char **argv)
 		printf("%c", file_content[i]);
 	}
 
-    char *token = strtok(file_content, " \n");
+    token = strtok(file_content, " \n");
 	while (token != NULL)
 	{
 		b++;
