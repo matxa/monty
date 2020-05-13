@@ -35,6 +35,11 @@ int main(int argc, char **argv)
     printf("%ld\n", n);
 
     tokens = malloc(sizeof(char *) * 4024);
+    if (tokens == NULL)
+    {
+        Error: malloc failed
+        exit(EXIT_FAILURE)
+    }
     tokens = parser(file_content, n);
     while (tokens[b] != NULL)
     {

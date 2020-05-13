@@ -13,7 +13,10 @@ char **parser(char *file_content, long int n)
 
 	command = malloc(sizeof(char *) * n);
 	if (command == NULL)
-		exit(-1);
+    {
+        Error: malloc failed
+        exit(EXIT_FAILURE)
+    }
 
 	command[i] = strtok(file_content, " \n");
 	while (command[i] != NULL)
