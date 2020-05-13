@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		printf("%s", arg_num);
+		perror("%s\n", arg_num);
 		exit(-1);
 	}
 	file_name = argv[1];
