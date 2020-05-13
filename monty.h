@@ -44,6 +44,6 @@ typedef struct instruction_s
 
 stack_t *push(stack_t **head, const int n);
 size_t pall(const stack_t *h);
-char *open_read_file(char *file_name)
+char *open_read_file(char *file_name);
 
 #endif
