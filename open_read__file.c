@@ -60,9 +60,9 @@ char *parse_f(char *buffer, char *file_name)
     printf("%d:  %p\n", i, token);
     while (token != NULL)
     {
-        token = strtok(NULL, " \n");
         printf("%d:  %p\n", i, token);
         i++;
+        token = strtok(NULL, " \n");
     }
     return (buffer);
 }
