@@ -8,15 +8,15 @@
 
 char *read_parse(char *file_name)
 {
-    if(stat(file_name,&st)==0)
-         buf_size = st.st_size;
-    printf("%d\n", buf_size);
-
 	FILE *fp;
-    int count
+    int count;
     char buffer[buf_size];
     long int buf_size;
     struct stat st;
+
+    if(stat(file_name,&st)==0)
+         buf_size = st.st_size;
+    printf("%d\n", buf_size)
 
     fp = fopen(file_name, "r");
     if (!fp)
@@ -29,5 +29,5 @@ char *read_parse(char *file_name)
     printf("%s\n", buffer);
     printf("%d\n", count);
 	fclose(fp);
-	return (token);
+	return (buffer);
 }
