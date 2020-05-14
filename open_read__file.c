@@ -41,3 +41,30 @@ char *read_f(char *file_name)
  * @file_name:file name
  * Return: file file content
  */
+
+char *parse_f(char *file_name)
+{
+    long int buf_size;
+    char *token;
+    char *buffer;
+    struct stat st;
+    int i = 0;
+
+    if(stat(file_name,&st)==0)
+        buf_size = st.st_size;
+
+    buffer = malloc(sizeof(char) * buf_size);
+
+    buffer = read_f(file_name);
+    token = malloc(sizeof(char) * buf_size);
+
+    token = strtok(buffer, " \n");
+    printf("%d: [%p] ---> %s\n", i, token, token);
+    while (token != NULL)
+    {
+        i++;
+        token = strtok(NULL, " \n");
+        printf("%d: [%p] ---> %s\n", i, token, token);
+    }
+    return (buffer);
+}
