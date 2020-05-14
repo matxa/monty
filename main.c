@@ -14,6 +14,7 @@ int main(int argc, char **argv)
     char *token;
     char *buffer;
     struct stat st;
+    int i = 0;
 
     if (argc != 2)
 	{
@@ -30,11 +31,12 @@ int main(int argc, char **argv)
     token = malloc(sizeof(char) * buf_size);
 
     token = strtok(buffer, " \n");
-    printf("[%p] ---> %s\n", token, token);
+    printf("%d: [%p] ---> %s\n", i, token, token);
     while (token != NULL)
     {
         token = strtok(NULL, " \n");
-        printf("[%p] ---> %s\n", token, token);
+        printf("%d: [%p] ---> %s\n", i, token, token);
+        i++;
     }
 	return (1);
 }
