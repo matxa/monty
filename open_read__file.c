@@ -15,7 +15,7 @@ char *read_parse(char *file_name)
 
     if(stat(file_name,&st)==0)
          buf_size = st.st_size;
-    printf("%d\n", buf_size)
+    printf("%ld\n", buf_size);
 
     char buffer[buf_size];
 
