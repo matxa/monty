@@ -8,10 +8,15 @@
 
 char *read_parse(char *file_name)
 {
+    if(stat(file_name,&st)==0)
+         buf_size = st.st_size;
+    printf("%d\n", buf_size);
+
 	FILE *fp;
-	char *line;
-    char *token;
-    int i = 0;
+    int count
+    char buffer[buf_size];
+    long int buf_size;
+    struct stat st;
 
     fp = fopen(file_name, "r");
     if (!fp)
@@ -19,16 +24,10 @@ char *read_parse(char *file_name)
         fprintf(stderr,"Error: Can't open file %s\n", file_name);
         exit(EXIT_FAILURE);
     }
-    while (!feof(fp))
-    {
-        line = fgets(line, 64, fp);
-        token = strtok(line, "\n");
-        while (!token)
-        {
-            token = strtok(NULL, "\n");
-            i++;
-        }
-    }
+
+    count = fread(&buffer, sizeof(char), buf_size, stream);
+    printf("%s\n", buffer);
+    printf("%d\n", count);
 	fclose(fp);
 	return (token);
 }
