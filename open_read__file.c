@@ -84,15 +84,15 @@ int add_to_stack(char *file_name)
     while (commands[i] != NULL)
     {
         printf("command %s  %s\n", commands[i], pus);
-        if (commands[i] == pus)
+        if (strcmp(commands[i], pus) = 0)
         {
-            printf("command %s\n", commands[i]);
+            printf("command in the if%s\n", commands[i]);
             push(&head, atoi(commands[i+1]));
             printf("Atoi    %d\n", atoi(commands[i+1]));
         }
-        else if (commands[i] == pal)
+        else if (strcmp(commands[i], pal) = 0)
         {
-            printf("command %s\n", commands[i]);
+            printf("command in the else if%s\n", commands[i]);
             pall(head);
         }
         else
