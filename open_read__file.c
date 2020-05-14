@@ -9,7 +9,6 @@
 char *read_parse(char *file_name)
 {
 	FILE *fp;
-    int count;
     char *buffer;
     long int buf_size;
     struct stat st;
@@ -30,7 +29,7 @@ char *read_parse(char *file_name)
         fprintf(stderr,"Error: Can't open file %s\n", file_name);
         exit(EXIT_FAILURE);
     }
-    count = fread(buffer, sizeof(char), buf_size, fp);
+    fread(buffer, sizeof(char), buf_size, fp);
 
 	fclose(fp);
 	return (buffer);
