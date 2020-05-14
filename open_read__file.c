@@ -64,3 +64,19 @@ char **parse_f(char *file_name)
 	}
 	return (commands);
 }
+
+int get_func(void)
+{
+    instruction_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+        {"push", push},
+        {"pall", pall},
+		{NULL, NULL}
+	};
+
+    return (1);
+}
