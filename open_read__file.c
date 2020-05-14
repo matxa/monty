@@ -57,11 +57,11 @@ char *parse_f(char *buffer, char *file_name)
     printf("%s\n", buffer);
 
     token = strtok(buffer, " \n");
-    printf("%d:  %s\n", i, token);
+    printf("%d:  %p\n", i, token);
     while (token != NULL)
     {
         token = strtok(NULL, " \n");
-        printf("%d:  %s\n", i, token);
+        printf("%d:  %p\n", i, token);
         i++;
     }
     return (buffer);
