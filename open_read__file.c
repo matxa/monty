@@ -44,8 +44,8 @@ char *read_f(char *file_name)
 
 char *parse_f(char *file_name)
 {
+    char **commands;
     long int buf_size;
-    char *token;
     char *buffer;
     struct stat st;
     int i = 0;
@@ -54,17 +54,16 @@ char *parse_f(char *file_name)
         buf_size = st.st_size;
 
     buffer = malloc(sizeof(char) * buf_size);
-
+    commands = malloc(sizeof(char *) * buf_size);
     buffer = read_f(file_name);
-    token = malloc(sizeof(char) * buf_size);
 
-    token = strtok(buffer, " \n");
-    printf("%d: [%p] ---> %s\n", i, token, token);
+    commands[i] = strtok(buffer, " \n");
+    printf("%d: [%p] ---> %s\n", i, commands[i], commands[i]);
     while (token != NULL)
     {
         i++;
-        token = strtok(NULL, " \n");
-        printf("%d: [%p] ---> %s\n", i, token, token);
+        commands[i] = strtok(NULL, " \n");
+        printf("%d: [%p] ---> %s\n", i, commands[i], commands[i]);
     }
-    return (buffer);
+    return (commands);
 }
