@@ -19,6 +19,11 @@ char *read_parse(char *file_name)
     printf("%ld\n", buf_size);
 
     buffer = malloc(sizeof(char) * buf_size);
+    if (!buffer)
+    {
+        perror("Error: malloc failed");
+        exit(EXIT_FAILURE);
+    }
 
     fp = fopen(file_name, "r");
     if (!fp)
@@ -28,6 +33,11 @@ char *read_parse(char *file_name)
     }
 
     count = fread(&buffer, sizeof(char), buf_size, fp);
+    if (count == -1)
+    {
+        perror("Error: Could not read from file");
+        exit(EXIT_FAILURE);
+    }
     printf("%s\n", buffer);
     printf("%d\n", count);
 	fclose(fp);
