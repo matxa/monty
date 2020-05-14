@@ -42,8 +42,9 @@ char *read_f(char *file_name)
  * Return: file file content
  */
 
-char *parse_f(char *buffer, (void)char *file_name)
+char *parse_f(char *buffer, char *file_name)
 {
+    (void) file_name;
     struct stat st;
     char *token;
     int i = 0
