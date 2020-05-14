@@ -95,6 +95,8 @@ int add_to_stack(char *file_name)
             printf("command %s\n", commands[i]);
             pall(head);
         }
+        else
+            printf("In the else\n");
         i++;
     }
     printf("head    %d\n", head->n);
