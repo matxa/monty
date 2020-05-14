@@ -12,7 +12,6 @@ char *read_parse(char *file_name)
 	char *line;
     char *token;
     int i = 0;
-    int b = 0;
 
     fp = fopen(file_name, "r");
     if (!fp)
