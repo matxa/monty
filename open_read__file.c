@@ -83,7 +83,7 @@ int add_to_stack(char *file_name)
     commands = parse_f(file_name);
     while (commands[i] != NULL)
     {
-        printf("command %s\n", commands[i]);
+        printf("command %s  %s\n", commands[i], pus);
         if (commands[i] == pus)
         {
             printf("command %s\n", commands[i]);
