@@ -45,7 +45,6 @@ char *read_f(char *file_name)
 char *parse_f(char *buffer, char *file_name)
 {
     char *token = malloc(sizeof(char) * 100);
-    struct stat st;
     (void) file_name;
 
 
