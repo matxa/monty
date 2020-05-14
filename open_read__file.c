@@ -10,6 +10,7 @@ char *read_parse(char *file_name)
 {
 	FILE *fp;
     int count;
+    char *buffer;
     long int buf_size;
     struct stat st;
 
@@ -17,7 +18,7 @@ char *read_parse(char *file_name)
          buf_size = st.st_size;
     printf("%ld\n", buf_size);
 
-    char buffer[buf_size];
+    buffer = malloc(sizeof(char) * buf_size);
 
     fp = fopen(file_name, "r");
     if (!fp)
