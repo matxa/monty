@@ -7,7 +7,7 @@
  * Return: pointer to the node pushed
  */
 
-stack_t *push(stack_t **head, const int n)
+stack_t push(stack_t **head, const int n)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 

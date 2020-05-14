@@ -84,7 +84,7 @@ int add_to_stack(char *file_name)
     {
         if (commands[i] == pus)
         {
-            push(**head, atoi(commands[i+1]));
+            push(*head, atoi(commands[i+1]));
         }
         else if (commands[i] == pal)
         {
