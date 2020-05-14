@@ -45,6 +45,7 @@ char **parse_f(char *file_name);
 int add_to_stack(char *file_name);
 stack_t *push(stack_t **head, const int n);
 size_t pall(const stack_t *h);
+int _pint(const stack_t *h);
 int op_add(int a, int b);
 int op_sub(int a, int b);
 int op_mul(int a, int b);
