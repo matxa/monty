@@ -11,6 +11,8 @@ int main(int argc, char **argv)
 {
 	char *file_name;
     char **commands;
+    struct stat st;
+    long int buf_size;
     int i = 0;
 
     commands = malloc(sizeof(char *) * buf_size);
@@ -21,7 +23,6 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	file_name = argv[1];
-    struct stat st;
 	if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
 
