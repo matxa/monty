@@ -10,6 +10,10 @@
 int main(int argc, char **argv)
 {
 	char *file_name;
+    char **commands;
+    int i = 0;
+
+    commands = malloc(sizeof(char *) * buf_size);
 
     if (argc != 2)
 	{
@@ -17,6 +21,16 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	file_name = argv[1];
-    parse_f(file_name);
+    struct stat st;
+	if (stat(file_name, &st) == 0)
+		buf_size = st.st_size;
+
+    commands = malloc(sizeof(char *) * buf_size);
+    commands = parse_f(file_name);
+    while (commands[i] != NULL)
+	{
+		i++;
+		printf("%s\n", commands[i]);
+	}
 	return (1);
 }
