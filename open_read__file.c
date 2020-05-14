@@ -6,7 +6,7 @@
  * Return: file file content
  */
 
-char *read_parse(char *file_name)
+char *read_f(char *file_name)
 {
 	FILE *fp;
     char *buffer;

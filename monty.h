@@ -42,7 +42,7 @@ typedef struct instruction_s
 
 stack_t *push(stack_t **head, const int n);
 size_t pall(const stack_t *h);
-char *read_parse(char *file_name);
+char *read_f(char *file_name);
 int op_add(int a, int b);
 int op_sub(int a, int b);
 int op_mul(int a, int b);

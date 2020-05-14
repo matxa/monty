@@ -22,10 +22,10 @@ int main(int argc, char **argv)
 	file_name = argv[1];
     if(stat(file_name,&st)==0)
          buf_size = st.st_size;
-
     file_content = malloc(sizeof(char) * buf_size);
-    file_content = read_parse(file_name);
+    file_content = read_f(file_name);
     printf("%s\n", file_content);
+
     free(file_content);
 	return (1);
 }
