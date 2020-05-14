@@ -81,7 +81,7 @@ int add_to_stack(char *file_name)
     head = malloc(sizeof(char) * buf_size);
     commands = malloc(sizeof(char *) * buf_size);
     commands = parse_f(file_name);
-    while (commands[i] != NULL)
+    while (commands != NULL)
     {
         if (strcmp(commands[i], pus) == 0)
         {
