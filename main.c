@@ -15,8 +15,6 @@ int main(int argc, char **argv)
     long int buf_size;
     int i = 0;
 
-    commands = malloc(sizeof(char *) * buf_size);
-
     if (argc != 2)
 	{
 		perror("USAGE: monty file\n");
