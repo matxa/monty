@@ -27,7 +27,7 @@ char *read_parse(char *file_name)
         exit(EXIT_FAILURE);
     }
 
-    count = fread(&buffer, sizeof(char), buf_size, stream);
+    count = fread(&buffer, sizeof(char), buf_size, fp);
     printf("%s\n", buffer);
     printf("%d\n", count);
 	fclose(fp);
