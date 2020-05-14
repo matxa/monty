@@ -26,6 +26,6 @@ int main(int argc, char **argv)
     file_content = malloc(sizeof(char) * buf_size);
     file_content = read_parse(file_name);
     printf("%s\n", file_content);
-    free(buffer;)
+    free(buffer);
 	return (1);
 }
