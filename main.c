@@ -10,7 +10,6 @@
 int main(int argc, char **argv)
 {
 	char *file_name;
-    char* list_tokens[64];
 
     if (argc != 2)
 	{

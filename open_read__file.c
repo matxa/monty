@@ -38,6 +38,6 @@ char *read_parse(char *file_name)
         b++;
     }
 
-	fclose(fd);
-	return (list_tokens);
+	fclose(fp);
+	return (*list_tokens);
 }
