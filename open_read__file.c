@@ -6,31 +6,38 @@
  * Return: file file content
  */
 
-char *open_read_file(char *file_name)
+char *read_parse(char *file_name)
 {
-	int fd;
-	char *file_content;
+	FILE *fp;
+    char* list_tokens[64];
+	char *line;
+    char *token;
+    int i = 0;
+    int b = 0;
 
-	fd = open(file_name, O_RDONLY | S_IRUSR | S_IWUSR);
-	if (fd == -1)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", file_name);
-		exit(EXIT_FAILURE);
-	}
-	if (fstat(fd, &file_size) == -1)
-	{
-		perror("couldn't get file size");
-		exit(EXIT_FAILURE);
-	}
+    fp = fopen(file_name, "r");
+    if (!fp)
+    {
+        fprintf(stderr,"Error: Can't open file %s\n", file_name);
+        exit(EXIT_FAILURE);
+    }
+    while (!feof(fp))
+    {
+        fgets(line, 1024, fp);
+        token = strtok(line, "\n");
+        while (!token)
+        {
+            list_tokens[i] = token;
+            token = strtok(NULL, "\n");
+            i++;
+        }
+    }
+    while (b < i)
+    {
+        printf("%s\n", list_tokens[i]);
+        b++;
+    }
 
-	file_content = mmap(NULL, file_size.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
-	if (file_name == MAP_FAILED)
-	{
-		perror("Could not fill up the buffer");
-		close(fd);
-		exit(-1);
-	}
-
-	close(fd);
-	return (file_content);
+	fclose(fd);
+	return (list_tokens);
 }
