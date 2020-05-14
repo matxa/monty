@@ -9,7 +9,6 @@
 char *read_parse(char *file_name)
 {
 	FILE *fp;
-    char* list_tokens[64];
 	char *line;
     char *token;
     int i = 0;
@@ -27,18 +26,10 @@ char *read_parse(char *file_name)
         token = strtok(line, "\n");
         while (!token)
         {
-            list_tokens[i] = token;
             token = strtok(NULL, "\n");
             i++;
         }
     }
-    printf("%d\n", i);
-    while (b < i)
-    {
-        printf("%s\n", list_tokens[i]);
-        b++;
-    }
-
 	fclose(fp);
-	return (*list_tokens);
+	return (token);
 }
