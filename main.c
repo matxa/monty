@@ -11,6 +11,8 @@ int main(int argc, char **argv)
 {
 	char *file_name;
     long int buf_size;
+    char *token;
+    char *buffer;
     struct stat st;
 
     if (argc != 2)
@@ -25,7 +27,7 @@ int main(int argc, char **argv)
     buffer = malloc(sizeof(char) * buf_size);
 
     buffer = read_f(file_name);
-    char *token = malloc(sizeof(char) * buf_size);
+    token = malloc(sizeof(char) * buf_size);
 
     token = strtok(buffer, " \n");
     printf("[%p] ---> %s\n", token, token);
