@@ -74,6 +74,7 @@ int add_to_stack(char *file_name)
     int i = 0;
     char *pus = "push";
     char *pal = "pall";
+    stack_t new_node;
 
     if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -84,7 +85,7 @@ int add_to_stack(char *file_name)
     {
         if (commands[i] == pus)
         {
-            push(*head, atoi(commands[i+1]));
+            new_node = push(*head, atoi(commands[i+1]));
         }
         else if (commands[i] == pal)
         {
