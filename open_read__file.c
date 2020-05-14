@@ -88,7 +88,7 @@ int add_to_stack(char *file_name)
         }
         else if (commands[i] == pal)
         {
-            pall(head);
+            pall(*head);
         }
     }
 
