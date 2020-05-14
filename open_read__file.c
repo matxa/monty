@@ -45,7 +45,6 @@ char *read_f(char *file_name)
 char *parse_f(char *buffer, char *file_name)
 {
     (void) file_name;
-    char *token;
     int i = 0;
     long int buf_size;
     struct stat st;
@@ -56,7 +55,7 @@ char *parse_f(char *buffer, char *file_name)
     buffer = malloc(sizeof(char) * buf_size);
     printf("%s\n", buffer);
 
-    token = strtok(buffer, " \n");
+    char *token = strtok(buffer, " \n");
     while (!token)
     {
         token = strtok(NULL, " \n");
