@@ -23,7 +23,7 @@ char *read_parse(char *file_name)
     }
     while (!feof(fp))
     {
-        fgets(line, 1024, fp);
+        fgets(line, 64, fp);
         token = strtok(line, "\n");
         while (!token)
         {
