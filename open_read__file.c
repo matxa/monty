@@ -89,7 +89,7 @@ int add_to_stack(char *file_name)
         if (commands[i] == pus)
         {
             push(&head, atoi(commands[i+1]));
-            printf("%d\n", atoi(commands[i+1]));
+            printf("Atoi    %d\n", atoi(commands[i+1]));
         }
         else if (commands[i] == pal)
         {
@@ -97,7 +97,7 @@ int add_to_stack(char *file_name)
         }
         i++;
     }
-    printf("%d\n", head->n);
+    printf("head    %d\n", head->n);
 
     return (1);
 }
