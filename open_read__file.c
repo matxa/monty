@@ -94,8 +94,8 @@ int add_to_stack(char *file_name)
         {
             pall(head);
         }
-        printf("%d\n", head->n);
     }
+    printf("%d\n", head->n);
 
     return (1);
 }
