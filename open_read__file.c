@@ -74,6 +74,7 @@ int add_to_stack(char *file_name)
     int i = 0;
     char pus[] = "push";
     char pal[] = "pall";
+    char pint[] = "pint";
 
     if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -90,6 +91,10 @@ int add_to_stack(char *file_name)
         else if (strcmp(commands[i], pal) == 0)
         {
             pall(head);
+        }
+        else if (strcmp(commands[i], pint) == 0)
+        {
+            print("%d\n", head->n);
         }
         i++;
     }
