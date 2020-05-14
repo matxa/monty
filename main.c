@@ -7,14 +7,9 @@
  * Return: success or fail
  */
 
-int main(int argc, char **argv, stack_t **head)
+int main(int argc, char **argv)
 {
-
 	char *file_name;
-    char **commands;
-    struct stat st;
-    long int buf_size;
-    int i = 0;
 
     if (argc != 2)
 	{
@@ -22,9 +17,7 @@ int main(int argc, char **argv, stack_t **head)
 		exit(EXIT_FAILURE);
 	}
 	file_name = argv[1];
-	if (stat(file_name, &st) == 0)
-		buf_size = st.st_size;
 
-    add_to_stack(*head);
+    add_to_stack();
 	return (1);
 }

@@ -65,8 +65,9 @@ char **parse_f(char *file_name)
 	return (commands);
 }
 
-int add_to_stack(stack_t **head)
+int add_to_stack(char *file_name)
 {
+    stack_t **head;
     struct stat st;
     long int buf_size;
     char **commands;
@@ -76,6 +77,7 @@ int add_to_stack(stack_t **head)
 		buf_size = st.st_size;
 
     commands = malloc(sizeof(char *) * buf_size);
+    commands = parse_f(file_name);
     while (commands[i] != NULL)
     {
         if (commands[i] == "push")
