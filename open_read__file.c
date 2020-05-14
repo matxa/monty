@@ -16,7 +16,6 @@ char *read_parse(char *file_name)
 
     if(stat(file_name,&st)==0)
          buf_size = st.st_size;
-    printf("%ld\n", buf_size);
 
     buffer = malloc(sizeof(char) * buf_size);
     if (!buffer)
@@ -31,15 +30,8 @@ char *read_parse(char *file_name)
         fprintf(stderr,"Error: Can't open file %s\n", file_name);
         exit(EXIT_FAILURE);
     }
-
     count = fread(buffer, sizeof(char), buf_size, fp);
-    if (count == -1)
-    {
-        perror("Error: Could not read from file");
-        exit(EXIT_FAILURE);
-    }
-    printf("%s\n", buffer);
-    printf("%d\n", count);
+
 	fclose(fp);
 	return (buffer);
 }
