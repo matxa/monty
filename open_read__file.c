@@ -67,7 +67,7 @@ char **parse_f(char *file_name)
 
 int add_to_stack(char *file_name)
 {
-    stack_t **head;
+    stack_t *head;
     struct stat st;
     long int buf_size;
     char **commands;
@@ -89,7 +89,7 @@ int add_to_stack(char *file_name)
         }
         else if (commands[i] == pal)
         {
-            pall(*head);
+            pall(head);
         }
     }
 
