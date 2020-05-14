@@ -93,9 +93,7 @@ int add_to_stack(char *file_name)
             pall(head);
         }
         else if (strcmp(commands[i], pint) == 0)
-        {
-            print("%d\n", head->n);
-        }
+            printf("%d \n", head->n);
         i++;
     }
     return (1);
