@@ -18,6 +18,6 @@ int main(int argc, char **argv)
 	}
 	file_name = argv[1];
 
-    add_to_stack();
+    add_to_stack(file_name);
 	return (1);
 }
