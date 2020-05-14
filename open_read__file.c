@@ -72,8 +72,8 @@ int add_to_stack(char *file_name)
     long int buf_size;
     char **commands;
     int i = 0;
-    char *pus = "push";
-    char *pal = "pall";
+    char pus[] = "push";
+    char pal[] = "pall";
 
     if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
