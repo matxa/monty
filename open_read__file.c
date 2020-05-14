@@ -46,7 +46,7 @@ char *parse_f(char *buffer, char *file_name)
 {
     (void) file_name;
     char *token;
-    int i = 0
+    int i = 0;
     long int buf_size;
     struct stat st;
 
