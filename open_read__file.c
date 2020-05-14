@@ -72,6 +72,8 @@ int add_to_stack(char *file_name)
     long int buf_size;
     char **commands;
     int i = 0;
+    char *push = "push";
+    char *pall = "pall"
 
     if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -80,11 +82,11 @@ int add_to_stack(char *file_name)
     commands = parse_f(file_name);
     while (commands[i] != NULL)
     {
-        if (commands[i] == "push")
+        if (commands[i] == push)
         {
             push(&head, atoi(commands[i+1]));
         }
-        else if (commands[i] == "pall")
+        else if (commands[i] == pall)
         {
             pall(&head);
         }
