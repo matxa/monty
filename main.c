@@ -10,6 +10,12 @@
 int main(int argc, char **argv)
 {
 	char *file_name;
+    long int buf_size;
+    struct stat st;
+    char *file_content = malloc(sizeof(char) * buf_size);
+
+    if(stat(file_name,&st)==0)
+         buf_size = st.st_size;
 
     if (argc != 2)
 	{
@@ -17,8 +23,8 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	file_name = argv[1];
-
-    printf("%s\n", read_parse(file_name));
+    file_content = read_parse(file_name);
+    printf("%s\n", file_content);
 
 	return (1);
 }
