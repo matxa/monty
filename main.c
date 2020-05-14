@@ -10,8 +10,6 @@
 int main(int argc, char **argv)
 {
 	char *file_name;
-    long int buf_size;
-    struct stat st;
 
     if (argc != 2)
 	{
@@ -21,6 +19,5 @@ int main(int argc, char **argv)
 	file_name = argv[1];
 
     parse_f(read_f(file_name), file_name);
-    free(file_content);
 	return (1);
 }
