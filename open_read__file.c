@@ -32,6 +32,7 @@ char *read_parse(char *file_name)
             i++;
         }
     }
+    print("%d\n", i);
     while (b < i)
     {
         printf("%s\n", list_tokens[i]);
