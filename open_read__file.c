@@ -32,7 +32,7 @@ char *read_parse(char *file_name)
         exit(EXIT_FAILURE);
     }
 
-    count = fread(&buffer, sizeof(char), buf_size, fp);
+    count = fread(buffer, sizeof(char), buf_size, fp);
     if (count == -1)
     {
         perror("Error: Could not read from file");
