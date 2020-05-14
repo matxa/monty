@@ -60,7 +60,7 @@ char *parse_f(char *buffer, char *file_name)
     while (!token)
     {
         token = strtok(NULL, " \n");
-        print("%d:  %s\n", i, token);
+        printf("%d:  %s\n", i, token);
         i++;
     }
     return (buffer);
