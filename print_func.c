@@ -14,13 +14,6 @@ stack_t *push(stack_t **head, const int n)
 	if (new_node == NULL)
 		return (NULL);
 
-    if (head == NULL)
-    {
-        head->n = n;
-    	head->next = NULL;
-    	head->prev = NULL;
-    }
-
 	new_node->n = n;
 	new_node->next = *head;
 	new_node->prev = NULL;
