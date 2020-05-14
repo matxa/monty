@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	}
 	file_name = argv[1];
 
-    read_parse(file_name);
+    printf("%s\n", read_parse(file_name));
 
 	return (1);
 }
