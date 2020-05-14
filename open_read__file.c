@@ -80,11 +80,14 @@ int add_to_stack(char *file_name)
 
     head = malloc(sizeof(char) * buf_size);
     commands = malloc(sizeof(char *) * buf_size);
+    head->prev = NULL;
+    head->next = NULL;
     commands = parse_f(file_name);
     while (commands[i] != NULL)
     {
         if (commands[i] == pus)
         {
+            head->n = atoi(commands[i+1]);
             push(&head, atoi(commands[i+1]));
         }
         else if (commands[i] == pal)
