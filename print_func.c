@@ -45,3 +45,15 @@ size_t pall(const stack_t *h)
 	}
 	return (f);
 }
+
+/**
+* _pint - prints int at head of list
+* @head: head of list
+* Return: 1 at success
+*/
+
+int _pint(const stack_t *h)
+{
+    printf("%d\n", h->n);
+    return (1);
+}
