@@ -42,7 +42,7 @@ char *read_f(char *file_name)
  * Return: file file content
  */
 
-char *parse_f(char *file_name)
+char **parse_f(char *file_name)
 {
     char **commands;
     long int buf_size;
@@ -59,7 +59,7 @@ char *parse_f(char *file_name)
 
     commands[i] = strtok(buffer, " \n");
     printf("%d: [%p] ---> %s\n", i, commands[i], commands[i]);
-    while (token != NULL)
+    while (commands[i] != NULL)
     {
         i++;
         commands[i] = strtok(NULL, " \n");
