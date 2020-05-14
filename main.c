@@ -28,8 +28,8 @@ int main(int argc, char **argv)
     commands = parse_f(file_name);
     while (commands[i] != NULL)
 	{
-		i++;
 		printf("%s\n", commands[i]);
+        i++;
 	}
 	return (1);
 }
