@@ -24,7 +24,7 @@ char *read_parse(char *file_name)
     while (!feof(fp))
     {
         fgets(line, 64, fp);
-        token = strtok(line, "\n");
+        token = strtok(&line, "\n");
         while (!token)
         {
             list_tokens[i] = token;
