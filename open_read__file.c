@@ -96,7 +96,9 @@ int add_to_stack(char *file_name)
             pall(head);
         }
         else
+        {
             printf("In the else\n");
+        }
         i++;
     }
     printf("head    %d\n", head->n);
