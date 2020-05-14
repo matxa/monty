@@ -10,13 +10,14 @@ char *read_parse(char *file_name)
 {
 	FILE *fp;
     int count;
-    char buffer[buf_size];
     long int buf_size;
     struct stat st;
 
     if(stat(file_name,&st)==0)
          buf_size = st.st_size;
     printf("%d\n", buf_size)
+
+    char buffer[buf_size];
 
     fp = fopen(file_name, "r");
     if (!fp)
