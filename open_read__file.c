@@ -45,12 +45,14 @@ char *read_f(char *file_name)
 char *parse_f(char *buffer, char *file_name)
 {
     (void) file_name;
-    struct stat st;
     char *token;
     int i = 0
+    long int buf_size;
+    struct stat st;
 
-    if (stat(file_name, &st) == 0)
+    if(stat(file_name,&st)==0)
         buf_size = st.st_size;
+
     buffer = malloc(sizeof(char) * buf_size);
     printf("%s\n", buffer);
 
