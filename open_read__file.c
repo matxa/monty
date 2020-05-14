@@ -37,8 +37,9 @@ char *read_f(char *file_name)
 
 /**
  * parse_f - parse buffer
+ * @buffer: array of chars
  * @file_name:file name
- * Return: parsed tokens
+ * Return: file file content
  */
 
 char **parse_f(char *file_name)
@@ -47,6 +48,7 @@ char **parse_f(char *file_name)
     long int buf_size;
     char *buffer;
     struct stat st;
+    int i = 0;
 
     if(stat(file_name,&st)==0)
         buf_size = st.st_size;
@@ -58,6 +60,7 @@ char **parse_f(char *file_name)
     commands[i] = strtok(buffer, " \n");
     while (commands[i] != NULL)
     {
+        i++;
         commands[i] = strtok(NULL, " \n");
     }
     return (commands);
