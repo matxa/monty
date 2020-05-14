@@ -49,6 +49,7 @@ char **parse_f(char *file_name)
     char *buffer;
     struct stat st;
     int i = 0;
+    int b = 0;
 
     if(stat(file_name,&st)==0)
         buf_size = st.st_size;
@@ -64,6 +65,11 @@ char **parse_f(char *file_name)
         i++;
         commands[i] = strtok(NULL, " \n");
         printf("%d: [%p] ---> %s\n", i, commands[i], commands[i]);
+    }
+    while (commands[b] != NULL)
+    {
+        printf("%d: -> %s\n", b, commands[b]);
+        b++;
     }
     return (commands);
 }
