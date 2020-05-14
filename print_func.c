@@ -38,7 +38,7 @@ size_t pall(const stack_t *h)
 
 	while (h)
 	{
-		printf("%d\n", h->n);
+		printf("node %d: %d\n", f, h->n);
 		last = h;
 		h = last->next;
 		f++;
