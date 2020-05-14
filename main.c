@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	char *file_name;
     long int buf_size;
     struct stat st;
-    char *file_content = malloc(sizeof(char) * buf_size);
+    char *file_content;
 
     if(stat(file_name,&st)==0)
          buf_size = st.st_size;
@@ -23,6 +23,8 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	file_name = argv[1];
+
+    file_content = malloc(sizeof(char) * buf_size);
     file_content = read_parse(file_name);
     printf("%s\n", file_content);
 
