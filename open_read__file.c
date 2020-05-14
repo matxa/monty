@@ -65,18 +65,28 @@ char **parse_f(char *file_name)
 	return (commands);
 }
 
-int get_func(void)
+int add_to_stack(stack_t **head)
 {
-    instruction_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-        {"push", push},
-        {"pall", pall},
-		{NULL, NULL}
-	};
+    struct stat st;
+    long int buf_size;
+    char **commands;
+    int i = 0;
+
+    if (stat(file_name, &st) == 0)
+		buf_size = st.st_size;
+
+    commands = malloc(sizeof(char *) * buf_size);
+    while (commands[i] != NULL)
+    {
+        if (commands[i] == "push")
+        {
+            push(*head, atoi(commands[i+1]));
+        }
+        else if (commands[i] == "pall")
+        {
+            pall(*head);
+        }
+    }
 
     return (1);
 }

@@ -7,8 +7,9 @@
  * Return: success or fail
  */
 
-int main(int argc, char **argv)
+int main(int argc, char **argv, stack_t **head)
 {
+
 	char *file_name;
     char **commands;
     struct stat st;
@@ -24,12 +25,6 @@ int main(int argc, char **argv)
 	if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
 
-    commands = malloc(sizeof(char *) * buf_size);
-    commands = parse_f(file_name);
-    while (commands[i] != NULL)
-	{
-		printf("%s\n", commands[i]);
-        i++;
-	}
+    add_to_stack(*head);
 	return (1);
 }
