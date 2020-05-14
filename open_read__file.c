@@ -83,7 +83,6 @@ int add_to_stack(char *file_name)
     commands = parse_f(file_name);
     while (commands[i] != NULL)
     {
-        printf("command %s  %s\n", commands[i], pus);
         if (strcmp(commands[i], pus) == 0)
         {
             push(&head, atoi(commands[i+1]));
@@ -94,7 +93,5 @@ int add_to_stack(char *file_name)
         }
         i++;
     }
-    printf("head    %d\n", head->n);
-
     return (1);
 }
