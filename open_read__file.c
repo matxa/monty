@@ -78,7 +78,6 @@ int add_to_stack(char *file_name)
 	long int buf_size;
 	char **commands;
 	unsigned int i = 0;
-    func_pointer run_func;
 
 	if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -94,15 +93,14 @@ int add_to_stack(char *file_name)
         }
         else
         {
-            run_func = get_op_func(commands[i]);
-            run_func(head, i);
+            get_op_func(commands[i], head, i);
         }
 		i++;
 	}
 	return (1);
 }
 
-func_pointer get_op_func(char *s)
+void get_op_func(char *s, **head, unsigned int n)
 {
 	instruction_t ops[] = {
 		{"pall", pall},
@@ -118,5 +116,5 @@ func_pointer get_op_func(char *s)
 		i++;
 	}
     printf("I think I got the right function");
-	return (ops[i].f);
+	ops[i].f(head, n);
 }

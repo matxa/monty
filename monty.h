@@ -40,12 +40,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-typedef void (*func_pointer)(stack_t **stack, unsigned int line_number);
 
 char *read_f(char *file_name);
 char **parse_f(char *file_name);
 int add_to_stack(char *file_name);
-func_pointer get_op_func(char *s);
+void get_op_func(char *s, **head, unsigned int n);
 void push(stack_t **head, unsigned int line_number);
 void pall(stack_t **head, unsigned int line_number);
 void _pint(stack_t **head, unsigned int line_number);
