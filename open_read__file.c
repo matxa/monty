@@ -112,11 +112,11 @@ func_pointer get_op_func(char *s)
 	int i;
 
 	i = 0;
-	while (ops[i].f != NULL && strcmp(ops[i].opcode, s) != 0)
+	while (ops[i].f != NULL && strcmp(ops[i].opcode, s) == 0)
 	{
         printf("inside get_op_func while loop\n");
+        return (ops[i].f);
 		i++;
 	}
     printf("I think I got the right function");
-	return (ops[i].f);
 }
