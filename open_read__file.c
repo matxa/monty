@@ -83,7 +83,7 @@ int add_to_stack(char *file_name)
     while (commands[i] != NULL)
     {
         exec_func = get_op_func(commands[i]);
-        exec_func(&head, atoi(commands[i]));
+        exec_func(*head, atoi(commands[i]));
         i++;
     }
     return (1);
