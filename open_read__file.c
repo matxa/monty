@@ -121,8 +121,6 @@ void get_op_func(char *s, stack_t **head, unsigned int n)
 	{
         if (strcmp(ops[i].opcode, s) == 0)
             ops[i].f(head, n);
-        printf("inside get_op_func while loop\n");
 		i++;
 	}
-    printf("I think I got the right function");
 }
