@@ -37,9 +37,9 @@ void pall(stack_t **head, unsigned int n)
 
 	while (head)
 	{
-		printf("node %d: %d\n", f, h->n);
-		last = h;
-		h = last->next;
+		printf("node %d: %d\n", f, head->n);
+		last = head;
+		head = last->next;
 		f++;
 	}
 }
