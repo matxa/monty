@@ -88,9 +88,13 @@ int add_to_stack(char *file_name)
 	commands = parse_f(file_name);
 	while (commands[i] != NULL)
 	{
+        if (strcmp(commands[i], "push") == 0)
+        {
+            push(&head, atoi(commands[i+1]));
+        }
 		printf("%s\n", commands[i]);
 		exec_func = get_op_func(commands[i]);
-		exec_func(head, i);
+		exec_func(&head, i);
 		i++;
 	}
 	return (1);
@@ -99,7 +103,6 @@ int add_to_stack(char *file_name)
 func_pointer get_op_func(char *s)
 {
 	instruction_t ops[] = {
-		{"push", push},
 		{"pall", pall},
 		{"pint", _pint},
 		{NULL, NULL}
