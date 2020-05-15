@@ -35,6 +35,7 @@ void pall(stack_t **head, unsigned int n)
 	const stack_t *last;
 	int f = 0;
 
+    printf("L%d:\n", n);
 	while (*head)
 	{
 		printf("%d\n", (*head)->n);
@@ -52,5 +53,6 @@ void pall(stack_t **head, unsigned int n)
 
 void _pint(stack_t **head, unsigned int n)
 {
-    printf("%d\n", head->n);
+    printf("L%d:\n", n);
+    printf("%d\n", (*head)->n);
 }
