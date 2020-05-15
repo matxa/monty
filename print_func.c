@@ -38,8 +38,8 @@ void pall(stack_t **head, unsigned int n)
 	while (*head)
 	{
 		printf("%d\n", f, *head->n);
-		last = head;
-		head = last->next;
+		last = *head;
+		*head = last->next;
 		f++;
 	}
 }
