@@ -72,9 +72,7 @@ int add_to_stack(char *file_name)
     long int buf_size;
     char **commands;
     int i = 0;
-    char pus[] = "push";
-    char pal[] = "pall";
-    char pint[] = "pint";
+    stack_t (*action)(stack_t, int);
 
     if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -84,17 +82,28 @@ int add_to_stack(char *file_name)
     commands = parse_f(file_name);
     while (commands[i] != NULL)
     {
-        if (strcmp(commands[i], pus) == 0)
-        {
-            push(&head, atoi(commands[i+1]));
-        }
-        else if (strcmp(commands[i], pal) == 0)
-        {
-            pall(head);
-        }
-        else if (strcmp(commands[i], pint) == 0)
-            _pint(head);
+        action = get_op_func(commands[i]);
+        action(head, atoi(commands[i]));
         i++;
     }
     return (1);
+}
+
+int (*get_op_func(char *s))(stack_t, int)
+{
+    instruction_t ops[] = {
+		{"push", push},
+		{"pall", pall},
+		{"pint", _pint},
+		{NULL, NULL}
+        int i;
+
+    i = 0;
+    while (ops[i].opcode != NULL)
+    {
+    	if (*ops[i].opcode == *s && !(*(s + 1)))
+    		return (ops[i].f);
+    	i++;
+    }
+    return (NULL);
 }
