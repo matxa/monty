@@ -78,6 +78,7 @@ int add_to_stack(char *file_name)
 	long int buf_size;
 	char **commands;
 	unsigned int i = 0;
+    func_pointer run_func;
 
 	if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -91,9 +92,9 @@ int add_to_stack(char *file_name)
         {
             push(head, atoi(commands[i+1]));
         }
-        else if (strcmp(commands[i], "pall") == 0)
+        else
         {
-            pall(head, i);
+            run_func = get_op_func(commands[i]);
         }
 		i++;
 	}
@@ -112,7 +113,9 @@ func_pointer get_op_func(char *s)
 	i = 0;
 	while (ops[i].f != NULL && strcmp(ops[i].opcode, s) != 0)
 	{
+        printf("inside get_op_func while loop\n");
 		i++;
 	}
+    printf("I think I got the right function");
 	return (ops[i].f);
 }
