@@ -92,13 +92,10 @@ int add_to_stack(char *file_name)
         {
             push(head, atoi(commands[i+1]));
         }
-        else
-        {
-            run_func = get_op_func(commands[i]);
-            run_func(head, i);
-        }
 		i++;
 	}
+    run_func = get_op_func(commands[i]);
+    run_func(head, i);
 	return (1);
 }
 
