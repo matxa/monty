@@ -72,7 +72,7 @@ int add_to_stack(char *file_name)
     long int buf_size;
     char **commands;
     int i = 0;
-    stack_t (*action)(stack_t, int);
+    int (*action)(stack_t, int);
 
     if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -89,7 +89,7 @@ int add_to_stack(char *file_name)
     return (1);
 }
 
-stack_t (*get_op_func(char *s))(stack_t, int)
+int (*get_op_func(char *s))(stack_t, int)
 {
     instruction_t ops[] = {
 		{"push", push},
