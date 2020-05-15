@@ -53,7 +53,7 @@ void pall(stack_t **head, unsigned int n)
 
 void _pint(stack_t **head, unsigned int n)
 {
-    if (head == NULL)
+    if (*head == NULL)
     {
         fprintf(stderr, "L%d: can't pint, stack empty\n", n);
         exit(EXIT_FAILURE);
