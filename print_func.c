@@ -12,7 +12,7 @@ void push(stack_t **head, unsigned int n)
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
-		return (-1);
+		exit(-1);
 
 	new_node->n = n;
 	new_node->next = *head;
@@ -35,7 +35,7 @@ void pall(stack_t **head, unsigned int n)
 	const stack_t *last;
 	int f = 0;
 
-	while (h)
+	while (head)
 	{
 		printf("node %d: %d\n", f, h->n);
 		last = h;
@@ -52,5 +52,5 @@ void pall(stack_t **head, unsigned int n)
 
 void _pint(stack_t **head, unsigned int n)
 {
-    printf("%d\n", h->n);
+    printf("%d\n", head->n);
 }
