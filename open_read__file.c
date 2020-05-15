@@ -84,8 +84,6 @@ int add_to_stack(char *file_name)
 		buf_size = st.st_size;
 
 	head = malloc(sizeof(char) * buf_size);
-    if (head == NULL)
-        printf("Head NULL");
 	commands = malloc(sizeof(char *) * buf_size);
 	commands = parse_f(file_name);
 	while (commands[i] != NULL)
@@ -94,10 +92,9 @@ int add_to_stack(char *file_name)
         {
             push(head, atoi(commands[i+1]));
         }
-        else
+        else if (strcmp(commands[i], "pall") == 0)
         {
-            exec_func = get_op_func(commands[i]);
-    		exec_func(head, i);
+            pall(head, i);
         }
 		i++;
 	}
