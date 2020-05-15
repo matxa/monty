@@ -71,7 +71,7 @@ int add_to_stack(char *file_name)
     struct stat st;
     long int buf_size;
     char **commands;
-    int i = 0;
+    unsigned int i = 0;
     func_pointer exec_func;
 
     if (stat(file_name, &st) == 0)
@@ -84,7 +84,7 @@ int add_to_stack(char *file_name)
     {
         exec_func = get_op_func(commands[i]);
 
-        exec_func(head, atoi(commands[i+1]));
+        exec_func(head, i));
         i++;
     }
     return (1);
