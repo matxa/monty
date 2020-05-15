@@ -100,7 +100,7 @@ int add_to_stack(char *file_name)
 	return (1);
 }
 
-void get_op_func(char *s, **head, unsigned int n)
+void get_op_func(char *s, stack_t **head, unsigned int n)
 {
 	instruction_t ops[] = {
 		{"pall", pall},
