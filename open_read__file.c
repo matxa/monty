@@ -67,12 +67,12 @@ char **parse_f(char *file_name)
 
 int add_to_stack(char *file_name)
 {
-    stack_t *head;
+    stack_t **head;
     struct stat st;
     long int buf_size;
     char **commands;
     int i = 0;
-    int (*exec_func)(stack_t, int);
+    func_pointer exec_func;
 
     if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -83,13 +83,14 @@ int add_to_stack(char *file_name)
     while (commands[i] != NULL)
     {
         exec_func = get_op_func(commands[i]);
-        exec_func(*head, atoi(commands[i]));
+
+        exec_func(*head, atoi(commands[i+1]));
         i++;
     }
     return (1);
 }
 
-int (*get_op_func(char *s))(stack_t, int)
+func_pointer get_op_func(char *s)
 {
     instruction_t ops[] = {
 		{"push", push},
@@ -100,11 +101,9 @@ int (*get_op_func(char *s))(stack_t, int)
     int i;
 
     i = 0;
-    while (ops[i].opcode != NULL)
-    {
-    	if (*ops[i].opcode == *s && !(*(s + 1)))
-    		return (ops[i].f);
-    	i++;
-    }
-    return (1);
+	while (ops[i].f != NULL && strcmp(ops[i].opcode, s) != 0)
+	{
+		i++;
+	}
+	return (ops[i].f);
 }

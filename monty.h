@@ -40,17 +40,14 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef void (*func_pointer)(stack_t **stack, unsigned int line_number)
+
 char *read_f(char *file_name);
 char **parse_f(char *file_name);
 int add_to_stack(char *file_name);
-int (*get_op_func(char *s))(stack_t, int);
-int push(stack_t **head, const int n);
-int pall(const stack_t *h);
-int _pint(const stack_t *h);
-int op_add(int a, int b);
-int op_sub(int a, int b);
-int op_mul(int a, int b);
-int op_div(int a, int b);
-int op_mod(int a, int b);
+func_pointer get_op_func(char *s);
+void push(stack_t **head, unsigned int line_number);
+void pall(stack_t **head, unsigned int line_number);
+void _pint(stack_t **head, unsigned int line_number);
 
 #endif

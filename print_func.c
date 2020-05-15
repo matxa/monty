@@ -7,7 +7,7 @@
  * Return: pointer to the node pushed
  */
 
-int push(stack_t **head, const int n)
+void push(stack_t **head, unsigned int n)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
@@ -22,7 +22,6 @@ int push(stack_t **head, const int n)
 		(*head)->prev = new_node;
 
 	*head = new_node;
-	return (1);
 }
 
 /**
@@ -31,7 +30,7 @@ int push(stack_t **head, const int n)
  * Return: printed list
  */
 
-int pall(const stack_t *h)
+void pall(stack_t **head, unsigned int n)
 {
 	const stack_t *last;
 	int f = 0;
@@ -43,7 +42,6 @@ int pall(const stack_t *h)
 		h = last->next;
 		f++;
 	}
-	return (f);
 }
 
 /**
@@ -52,8 +50,7 @@ int pall(const stack_t *h)
 * Return: 1 at success
 */
 
-int _pint(const stack_t *h)
+void _pint(stack_t **head, unsigned int n)
 {
     printf("%d\n", h->n);
-    return (1);
 }
