@@ -100,6 +100,13 @@ int add_to_stack(char *file_name)
 	return (1);
 }
 
+/**
+* get_op_func - get functions
+* @s: command
+* @head: top of stack
+* @n: line_number
+*/
+
 void get_op_func(char *s, stack_t **head, unsigned int n)
 {
 	instruction_t ops[] = {
@@ -110,11 +117,12 @@ void get_op_func(char *s, stack_t **head, unsigned int n)
 	int i;
 
 	i = 0;
-	while (ops[i].f != NULL && strcmp(ops[i].opcode, s) != 0)
+	while (ops[i].opcode != NULL)
 	{
+        if (strcmp(ops[i].opcode, s) == 0)
+            ops[i].f(head, n);
         printf("inside get_op_func while loop\n");
 		i++;
 	}
     printf("I think I got the right function");
-	ops[i].f(head, n);
 }
