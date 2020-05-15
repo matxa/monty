@@ -95,6 +95,7 @@ int add_to_stack(char *file_name)
         else
         {
             run_func = get_op_func(commands[i]);
+            run_func(head, i);
         }
 		i++;
 	}
