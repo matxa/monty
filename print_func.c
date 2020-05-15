@@ -35,7 +35,9 @@ void pall(stack_t **head, unsigned int n)
 	const stack_t *last;
 	int f = 0;
 
-	printf("L%d:\n", n);
+    if (head == NULL)
+        n = 0;
+
 	while (*head)
 	{
 		printf("%d\n", (*head)->n);
@@ -53,6 +55,10 @@ void pall(stack_t **head, unsigned int n)
 
 void _pint(stack_t **head, unsigned int n)
 {
-	printf("L%d:\n", n);
+    if (head == NULL)
+    {
+        fprintf(stderr, "L%d: can't pint, stack empty\n", i);
+        exit(EXIT_FAILURE);
+    }
 	printf("%d\n", (*head)->n);
 }
