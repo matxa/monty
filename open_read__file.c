@@ -72,7 +72,7 @@ int add_to_stack(char *file_name)
     long int buf_size;
     char **commands;
     int i = 0;
-    int (*action)(stack_t, int);
+    int (*exec_func)(stack_t, int);
 
     if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
@@ -82,8 +82,8 @@ int add_to_stack(char *file_name)
     commands = parse_f(file_name);
     while (commands[i] != NULL)
     {
-        action = get_op_func(commands[i]);
-        action(head, atoi(commands[i]));
+        exec_func = get_op_func(commands[i]);
+        exec_func(&head, atoi(commands[i]));
         i++;
     }
     return (1);
@@ -106,5 +106,5 @@ int (*get_op_func(char *s))(stack_t, int)
     		return (ops[i].f);
     	i++;
     }
-    return (NULL);
+    return (-1);
 }
