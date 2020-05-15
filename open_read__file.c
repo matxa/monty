@@ -89,7 +89,7 @@ int add_to_stack(char *file_name)
     return (1);
 }
 
-int (*get_op_func(char *s))(stack_t, int)
+stack_t (*get_op_func(char *s))(stack_t, int)
 {
     instruction_t ops[] = {
 		{"push", push},
