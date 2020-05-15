@@ -34,7 +34,7 @@ void pall(stack_t **head, unsigned int n)
 {
 	const stack_t *last;
 	int f = 0;
-    n = 0;
+    (void) n;
     
     if (head == NULL)
         n = 0;
