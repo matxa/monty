@@ -66,46 +66,46 @@ char **parse_f(char *file_name)
 }
 
 /**
-* add_to_stack - change stack
-* @file_name: file name
-* Return: 1 at success
-*/
+ * add_to_stack - change stack
+ * @file_name: file name
+ * Return: 1 at success
+ */
 
 int add_to_stack(char *file_name)
 {
-    stack_t **head;
-    struct stat st;
-    long int buf_size;
-    char **commands;
-    unsigned int i = 0;
-    func_pointer exec_func;
+	stack_t **head;
+	struct stat st;
+	long int buf_size;
+	char **commands;
+	unsigned int i = 0;
+	func_pointer exec_func;
 
-    if (stat(file_name, &st) == 0)
+	if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
 
-    head = malloc(sizeof(char) * buf_size);
-    commands = malloc(sizeof(char *) * buf_size);
-    commands = parse_f(file_name);
-    while (commands[i] != NULL)
-    {
-        exec_func = get_op_func(commands[i]);
-        exec_func(head, i);
-        i++;
-    }
-    return (1);
+	head = malloc(sizeof(char) * buf_size);
+	commands = malloc(sizeof(char *) * buf_size);
+	commands = parse_f(file_name);
+	while (commands[i] != NULL)
+	{
+		exec_func = get_op_func(commands[i]);
+		exec_func(head, i);
+		i++;
+	}
+	return (1);
 }
 
 func_pointer get_op_func(char *s)
 {
-    instruction_t ops[] = {
+	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pint", _pint},
 		{NULL, NULL}
-    };
-    int i;
+	};
+	int i;
 
-    i = 0;
+	i = 0;
 	while (ops[i].f != NULL && strcmp(ops[i].opcode, s) != 0)
 	{
 		i++;

@@ -11,13 +11,13 @@ int main(int argc, char **argv)
 {
 	char *file_name;
 
-    if (argc != 2)
+	if (argc != 2)
 	{
 		perror("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file_name = argv[1];
 
-    add_to_stack(file_name);
+	add_to_stack(file_name);
 	return (1);
 }

@@ -26,8 +26,8 @@ void push(stack_t **head, unsigned int n)
 
 /**
  * pall - prints all int in the list
- * @h: head of the list
- * Return: printed list
+ * @head: head of the list
+ * @n: line number
  */
 
 void pall(stack_t **head, unsigned int n)
@@ -35,7 +35,7 @@ void pall(stack_t **head, unsigned int n)
 	const stack_t *last;
 	int f = 0;
 
-    printf("L%d:\n", n);
+	printf("L%d:\n", n);
 	while (*head)
 	{
 		printf("%d\n", (*head)->n);
@@ -46,13 +46,13 @@ void pall(stack_t **head, unsigned int n)
 }
 
 /**
-* _pint - prints int at head of list
-* @head: head of list
-* Return: 1 at success
-*/
+ * _pint - prints int at head of list
+ * @head: head of list
+ * @n: line number
+ */
 
 void _pint(stack_t **head, unsigned int n)
 {
-    printf("L%d:\n", n);
-    printf("%d\n", (*head)->n);
+	printf("L%d:\n", n);
+	printf("%d\n", (*head)->n);
 }
