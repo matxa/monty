@@ -65,6 +65,12 @@ char **parse_f(char *file_name)
 	return (commands);
 }
 
+/**
+* add_to_stack - change stack
+* @file_name: file name
+* Return: 1 at success
+*/
+
 int add_to_stack(char *file_name)
 {
     stack_t **head;
@@ -83,7 +89,6 @@ int add_to_stack(char *file_name)
     while (commands[i] != NULL)
     {
         exec_func = get_op_func(commands[i]);
-
         exec_func(head, i);
         i++;
     }
