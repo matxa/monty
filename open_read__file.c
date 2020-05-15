@@ -89,7 +89,7 @@ int add_to_stack(char *file_name)
 	{
         if (strcmp(commands[i], "push") == 0)
         {
-            if (atoi(command[i+1]) != 0)
+            if (atoi(commands[i+1]) != 0)
                 push(head, atoi(commands[i+1]));
             else
             {
