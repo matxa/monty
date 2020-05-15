@@ -88,6 +88,7 @@ int add_to_stack(char *file_name)
 	commands = parse_f(file_name);
 	while (commands[i] != NULL)
 	{
+		printf("%s\n", commands[i]);
 		exec_func = get_op_func(commands[i]);
 		exec_func(head, i);
 		i++;
