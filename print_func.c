@@ -37,7 +37,7 @@ void pall(stack_t **head, unsigned int n)
 
 	while (*head)
 	{
-		printf("%d\n", f, *head->n);
+		printf("%d\n", (*head)->n);
 		last = *head;
 		*head = last->next;
 		f++;
