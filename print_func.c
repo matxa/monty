@@ -12,7 +12,7 @@ int push(stack_t **head, const int n)
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
-		return (NULL);
+		return (-1);
 
 	new_node->n = n;
 	new_node->next = *head;

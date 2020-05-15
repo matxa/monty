@@ -106,5 +106,5 @@ int (*get_op_func(char *s))(stack_t, int)
     		return (ops[i].f);
     	i++;
     }
-    return (s);
+    return (1);
 }
