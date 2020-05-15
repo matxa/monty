@@ -44,7 +44,7 @@ typedef struct instruction_s
 char *read_f(char *file_name);
 char **parse_f(char *file_name);
 int add_to_stack(char *file_name);
-void get_op_func(char *s, **head, unsigned int n);
+void get_op_func(char *s, stack_t **head, unsigned int n);
 void push(stack_t **head, unsigned int line_number);
 void pall(stack_t **head, unsigned int line_number);
 void _pint(stack_t **head, unsigned int line_number);
