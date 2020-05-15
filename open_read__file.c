@@ -78,7 +78,7 @@ int add_to_stack(char *file_name)
 	long int buf_size;
 	char **commands;
 	unsigned int i = 0;
-	func_pointer exec_func = malloc(sizeof(func_pointer));
+	func_pointer exec_func;
 
 	if (stat(file_name, &st) == 0)
 		buf_size = st.st_size;
