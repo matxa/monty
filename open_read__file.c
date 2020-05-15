@@ -90,11 +90,11 @@ int add_to_stack(char *file_name)
 	{
         if (strcmp(commands[i], "push") == 0)
         {
-            push(*head, atoi(commands[i+1]));
+            push(head, atoi(commands[i+1]));
         }
 		printf("%s\n", commands[i]);
 		exec_func = get_op_func(commands[i]);
-		exec_func(*head, i);
+		exec_func(head, i);
 		i++;
 	}
 	return (1);
