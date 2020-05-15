@@ -7,7 +7,7 @@
  * Return: pointer to the node pushed
  */
 
-stack_t *push(stack_t **head, const int n)
+int push(stack_t **head, const int n)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
@@ -22,7 +22,7 @@ stack_t *push(stack_t **head, const int n)
 		(*head)->prev = new_node;
 
 	*head = new_node;
-	return (new_node);
+	return (1);
 }
 
 /**
@@ -31,7 +31,7 @@ stack_t *push(stack_t **head, const int n)
  * Return: printed list
  */
 
-size_t pall(const stack_t *h)
+int pall(const stack_t *h)
 {
 	const stack_t *last;
 	int f = 0;
