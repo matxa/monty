@@ -118,5 +118,6 @@ func_pointer get_op_func(char *s)
         return (ops[i].f);
 		i++;
 	}
-    printf("I think I got the right function");
+    printf("I didn't find the func");
+    return (NULL);
 }
