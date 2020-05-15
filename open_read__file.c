@@ -96,7 +96,7 @@ int (*get_op_func(char *s))(stack_t, int)
 		{"pall", pall},
 		{"pint", _pint},
 		{NULL, NULL}
-    }
+    };
     int i;
 
     i = 0;
