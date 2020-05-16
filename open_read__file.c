@@ -103,6 +103,7 @@ int add_to_stack(char *file_name)
         }
 		i++;
 	}
+    free(head);
 	return (1);
 }
 
