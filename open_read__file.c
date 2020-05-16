@@ -62,7 +62,7 @@ char **parse_f(char *file_name)
 		i++;
 		commands[i] = strtok(NULL, " \n");
 	}
-    free(buffer);
+	free(buffer);
 	return (commands);
 }
 
@@ -88,33 +88,33 @@ int add_to_stack(char *file_name)
 	commands = parse_f(file_name);
 	while (commands[i] != NULL)
 	{
-        if (strcmp(commands[i], "push") == 0)
-        {
-            if (atoi(commands[i+1]) != 0)
-                push(head, atoi(commands[i+1]));
-            else
-            {
-                fprintf(stderr, "L%d: usage: push integer\n", i);
-                exit(EXIT_FAILURE);
-            }
-        }
-        else
-        {
-            get_op_func(commands[i], head, i);
-        }
+		if (strcmp(commands[i], "push") == 0)
+		{
+			if (atoi(commands[i + 1]) != 0)
+				push(head, atoi(commands[i + 1]));
+			else
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", i);
+				exit(EXIT_FAILURE);
+			}
+		}
+		else
+		{
+			get_op_func(commands[i], head, i);
+		}
 		i++;
 	}
-    free_dlistint(*head);
-    free(commands);
+	free_dlistint(*head);
+	free(commands);
 	return (1);
 }
 
 /**
-* get_op_func - get functions
-* @s: command
-* @head: top of stack
-* @n: line_number
-*/
+ * get_op_func - get functions
+ * @s: command
+ * @head: top of stack
+ * @n: line_number
+ */
 
 void get_op_func(char *s, stack_t **head, unsigned int n)
 {
@@ -128,8 +128,8 @@ void get_op_func(char *s, stack_t **head, unsigned int n)
 	i = 0;
 	while (ops[i].opcode != NULL)
 	{
-        if (strcmp(ops[i].opcode, s) == 0)
-            ops[i].f(head, n);
+		if (strcmp(ops[i].opcode, s) == 0)
+			ops[i].f(head, n);
 		i++;
 	}
 }
