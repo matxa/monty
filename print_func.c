@@ -22,7 +22,6 @@ void push(stack_t **head, unsigned int n)
 		(*head)->prev = new_node;
 
 	*head = new_node;
-    free(new_node);
 }
 
 /**
