@@ -62,6 +62,7 @@ char **parse_f(char *file_name)
 		i++;
 		commands[i] = strtok(NULL, " \n");
 	}
+    free(buffer);
 	return (commands);
 }
 
@@ -104,6 +105,8 @@ int add_to_stack(char *file_name)
 		i++;
 	}
     free_dlistint(*head);
+    free(head);
+    free(commands);
 	return (1);
 }
 
