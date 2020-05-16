@@ -105,7 +105,6 @@ int add_to_stack(char *file_name)
 		i++;
 	}
     free_dlistint(*head);
-    free(head);
     free(commands);
 	return (1);
 }
